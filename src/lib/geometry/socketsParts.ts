@@ -35,7 +35,8 @@ export function socketSize(key: CuttleKey): Vector {
   if (key.type == 'evqwgd001') return new Vector(19.2, 19.2, 4.7)
   if (key.type == 'oled-128x32-0.91in-adafruit') return new Vector(22.044, 33.22, 5)
   if (key.type == 'oled-128x32-0.91in-dfrobot') return new Vector(11.6, 41.18, 2.84)
-  if (key.type == 'niceview-160x68-39mm') return new Vector(14.1, 36.1, 2.9)
+  // 0.2 is added to width and height to account for the 0.2mm tolerance for PCB V-cut
+  if (key.type == 'niceview-160x68-39mm') return new Vector(14.1+0.2, 36.1+0.2, 2.9)
   if (key.type == 'alps') return new Vector(18.6, 17, 5)
   if (key.type.startsWith('cirque')) return new Vector(0, 0, 3)
   return new Vector(18, 18, 5)
