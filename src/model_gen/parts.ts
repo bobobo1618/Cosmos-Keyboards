@@ -141,8 +141,9 @@ async function main() {
 
   const masses: Record<string, number> = {}
   const niceViewDisplayProps: DisplayProps = {
-    pcbLongSideWidth: 36,
-    pcbShortSideWidth: 14,
+    // 0.2 is added to width and height to account for the 0.2mm tolerance for PCB V-cut
+    pcbLongSideWidth: 36+0.2,
+    pcbShortSideWidth: 14+0.2,
     offsetFromLongSide: 1.6,
     offsetFromTopShortSide: 4.6,
     offsetFromBottomShortSide: 3.65,
