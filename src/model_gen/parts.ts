@@ -140,6 +140,17 @@ async function main() {
   await genSocket('joystick-ps2-40x45')
 
   const masses: Record<string, number> = {}
+  const niceViewDisplayProps: DisplayProps = {
+    pcbLongSideWidth: 36,
+    pcbShortSideWidth: 14,
+    offsetFromLongSide: 1.6,
+    offsetFromTopShortSide: 4.6,
+    offsetFromBottomShortSide: 3.65,
+    displayThickness: 0.9,
+    pcbThickness: 2,
+  }
+  await genDisplayModel('niceview-160x68-39mm', niceViewDisplayProps, 0.5)
+  await genDisplaySocket('niceview-160x68-39mm', niceViewDisplayProps)
   for (const socket of Object.keys(PART_NAMES)) {
     try {
       masses[socket] = await genSocket(socket)
