@@ -150,7 +150,7 @@ interface CuttleKeycapKey extends CuttleBaseKey {
 }
 
 interface CuttleBasicKey extends CuttleBaseKey {
-  type: 'ec11' | 'oled-128x32-0.91in-adafruit' | 'oled-128x32-0.91in-dfrobot' | 'evqwgd001'
+  type: 'ec11' | 'oled-128x32-0.91in-adafruit' | 'oled-128x32-0.91in-dfrobot' | 'niceview-160x68-39mm' | 'evqwgd001'
 }
 
 interface CuttleBlankKey extends CuttleBaseKey {
@@ -667,6 +667,18 @@ export function fingers(c: DeepRequired<CuttleformProto>): CuttleKey[] {
     /* @ts-ignore */
     modifierKeys = [{
       type: 'oled-128x32-0.91in-dfrobot',
+      aspect: 1,
+      cluster: 'fingers',
+      position: new ETrsf().placeOnMatrix(mergedCurvature(c, false, {
+        column: -1 - centerCol,
+        row: 0.5 - centerRow,
+      })).translate(dmColumnOffset(0)).translate(0, 0, -4).transformBy(keyPlane).rotateToVertical(0.5),
+    }]
+  }
+  if (c.upperKeys.extraColumn == EXTRA_COLUMN.LCD_NV) {
+    /* @ts-ignore */
+    modifierKeys = [{
+      type: 'niceview-160x68-39mm',
       aspect: 1,
       cluster: 'fingers',
       position: new ETrsf().placeOnMatrix(mergedCurvature(c, false, {

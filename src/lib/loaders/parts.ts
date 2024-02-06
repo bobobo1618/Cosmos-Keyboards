@@ -25,6 +25,7 @@ const PART_URLS: Record<Switch, string | null> = {
   'cirque-40mm': '/src/assets/switch-cirque-40mm.glb',
   'oled-128x32-0.91in-dfrobot': '/target/switch-oled-128x32-0.91in-dfrobot.glb',
   'oled-128x32-0.91in-adafruit': null,
+  'niceview-160x68-39mm': '/target/switch-niceview-160x68-39mm.glb',
   'trackball': null,
   'blank': null,
 }

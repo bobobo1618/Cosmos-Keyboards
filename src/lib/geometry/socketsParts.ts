@@ -19,6 +19,7 @@ export const PART_NAMES: Record<CuttleKey['type'], string> = {
   'blank': 'Ignore this',
   'oled-128x32-0.91in-adafruit': 'Adafruit 128x32 1" Diagonal OLEDs',
   'oled-128x32-0.91in-dfrobot': 'DFRobot 128x32 0.91" Diagonal OLEDs (DFR0647)',
+  'niceview-160x68-39mm': 'nice!view memory-in-pixel display',
   'cirque-23mm': 'Cirque 23 mm Flat Circle Trackpads',
   'cirque-35mm': 'Cirque 35 mm Flat Circle Trackpads',
   'cirque-40mm': 'Cirque 40 mm Flat Circle Trackpads',
@@ -34,6 +35,7 @@ export function socketSize(key: CuttleKey): Vector {
   if (key.type == 'evqwgd001') return new Vector(19.2, 19.2, 4.7)
   if (key.type == 'oled-128x32-0.91in-adafruit') return new Vector(22.044, 33.22, 5)
   if (key.type == 'oled-128x32-0.91in-dfrobot') return new Vector(11.6, 41.18, 2.84)
+  if (key.type == 'niceview-160x68-39mm') return new Vector(14.1, 36.1, 2.9)
   if (key.type == 'alps') return new Vector(18.6, 17, 5)
   if (key.type.startsWith('cirque')) return new Vector(0, 0, 3)
   return new Vector(18, 18, 5)
