@@ -101,6 +101,10 @@ async function main() {
     { start: 1.48, align: { side: 'left', offset: 1.38 }, ...defaults },
     { start: 1.48, align: { side: 'right', offset: 1.38 }, ...defaults },
   ])
+  await genUC('solderless-nn', {}, [
+    { start: 1.1, end: 30, align: {side: 'left', offset: 15.4}, ...defaults },
+    { start: 1.1, end: 30, align: {side: 'right', offset: 16}, ...defaults },
+  ])
   const dfDisplayProps: DisplayProps = {
     pcbLongSideWidth: 41.08,
     pcbShortSideWidth: 11.5,

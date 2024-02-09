@@ -832,7 +832,7 @@ export const connectors: Record<string, { positive: (c: Cuttleform) => Solid | n
       return rectangleForUSB(c) // usb hole
         .sketchOnPlane('XZ')
         .extrude(c.wallThickness * 10)
-        .translate(0, c.wallThickness * 10, 5) as Solid
+        .translate(0, c.wallThickness * 10, 5 + 6.35/2 + 3.9/2) as Solid
     },
   },
   external: {

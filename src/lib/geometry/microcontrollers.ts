@@ -129,6 +129,21 @@ export const BOARD_PROPERTIES: Record<Microcontroller, BoardProperties> = {
     cutouts: [],
     sidecutout: 3.1,
   },
+  'solderless-nn': {
+    name: 'Solderless nice!nano',
+    size: new Vector(46.45, 66, 1.57),
+    boundingBoxZ: 5,
+    offset: new Vector(0, 0, 1.835),
+    holes: [],
+    cutouts: [
+      { size: new Vector(4, 35, 0), origin: new Vector(7.5, -35/2-2, 0) },
+      { size: new Vector(4, 5, 0), origin: new Vector(12, -11-2, 0) },
+      { size: new Vector(4, 35, 0), origin: new Vector(-7.5, -35/2-2, 0) },
+      { size: new Vector(4, 5, 0), origin: new Vector(-12, -11-2, 0) },
+      //{ size: new Vector(4, 30.5, 0), origin: new Vector(46.45 - 14.45, -(1.1 + 64.9/2), 0) },
+    ],
+    sidecutout: 0,
+  },
 }
 
 // Use a constant set of board properties for layout so

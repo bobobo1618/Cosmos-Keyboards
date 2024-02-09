@@ -971,7 +971,7 @@ function findBoardWalls(c: Cuttleform, walls: WallCriticalPoints[], origin: Trsf
   const originInv = origin.inverted()
   const [i1, e1] = findClosestWall(c, walls, p => p.sub(p1).lengthSq(), p => p.x < p1.x, originInv, worldZ, bottomZ, optimize)
   const [i2, e2] = findClosestWall(c, walls, p => p.sub(p2).lengthSq(), p => p.x > p2.x, originInv, worldZ, bottomZ, optimize)
-  const [i3, e3] = findClosestWall(c, walls, p => Math.abs(p.sub(p3).y), p => p.x < p3.x, originInv, worldZ, bottomZ, optimize)
+  const [i3, e3] = findClosestWall(c, walls, p => p.sub(p3).lengthSq(), p => p.y < p3.y, originInv, worldZ, bottomZ, optimize)
 
   const indices = [i1, i2, i3]
   let error = e1 + e2 + originInv.apply(screwOrigin(c, i3, walls)).sub(p3).lengthSq()
