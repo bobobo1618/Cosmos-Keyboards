@@ -27,6 +27,7 @@ const PART_URLS: Record<Switch, string | null> = {
   'oled-128x32-0.91in-dfrobot': '/target/switch-oled-128x32-0.91in-dfrobot.glb',
   'oled-128x32-0.91in-adafruit': null,
   'niceview-160x68-39mm': '/target/switch-niceview-160x68-39mm.glb',
+  'joystick-ps2-40x45': '/target/switch-joystick-ps2-40x45.glb',
   'trackball': null,
   'blank': null,
 }

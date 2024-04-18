@@ -24,6 +24,7 @@ export const PART_NAMES: Record<CuttleKey['type'], string> = {
   'cirque-23mm': 'Cirque 23 mm Flat Circle Trackpads',
   'cirque-35mm': 'Cirque 35 mm Flat Circle Trackpads',
   'cirque-40mm': 'Cirque 40 mm Flat Circle Trackpads',
+  'joystick-ps2-40x45': 'PS2 style joystick module',
 }
 
 export const ASYMMETRIC_PARTS: CuttleKey['type'][] = [
@@ -46,6 +47,7 @@ export function socketSize(key: CuttleKey): Vector {
   // 0.2 is added to width and height to account for the 0.2mm tolerance for PCB V-cut
   if (key.type == 'niceview-160x68-39mm') return new Vector(14.1+0.2, 36.1+0.2, 2.9)
   if (key.type == 'alps') return new Vector(18.6, 17, 5)
+  if (key.type == 'joystick-ps2-40x45') return new Vector(40, 45, 4)
   if (key.type.startsWith('cirque')) return new Vector(0, 0, 3)
   return new Vector(18, 18, 5)
 }
@@ -81,6 +83,9 @@ export function partBottom(sw: CuttleKey['type'] | undefined): [number, number, 
   }
   if (sw == 'oled-128x32-0.91in-dfrobot') {
     return [box(11.5, 24.4, 4.3)]
+  }
+  if (sw == 'joystick-ps2-40x45') {
+    return [box(40, 45, 19.5)]
   }
   return [box(10, 10, 2)]
 }
