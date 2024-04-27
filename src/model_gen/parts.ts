@@ -110,8 +110,8 @@ async function main() {
     { start: 1.48, align: { side: 'right', offset: 1.38 }, ...defaults },
   ])
   await genUC('solderless-nn', {}, [
-    { start: 1.1, end: 30, align: {side: 'left', offset: 15.4}, ...defaults },
-    { start: 1.1, end: 30, align: {side: 'right', offset: 16}, ...defaults },
+    { start: 1.1, end: 30, align: { side: 'left', offset: 15.4 }, ...defaults },
+    { start: 1.1, end: 30, align: { side: 'right', offset: 16 }, ...defaults },
   ])
   const dfDisplayProps: DisplayProps = {
     pcbLongSideWidth: 41.08,
@@ -124,26 +124,14 @@ async function main() {
   }
   await genDisplayModel('oled-128x32-0.91in-dfrobot', dfDisplayProps, 0.5)
   await genDisplaySocket('oled-128x32-0.91in-dfrobot', dfDisplayProps)
-  const niceViewDisplayProps: DisplayProps = {
-    // 0.2 is added to width and height to account for the 0.2mm tolerance for PCB V-cut
-    pcbLongSideWidth: 36+0.2,
-    pcbShortSideWidth: 14+0.2,
-    offsetFromLongSide: 0,
-    offsetFromTopShortSide: 3,
-    offsetFromBottomShortSide: 3.65,
-    displayThickness: 0.9,
-    pcbThickness: 2,
-  }
-  await genDisplayModel('niceview-160x68-39mm', niceViewDisplayProps, 0.5)
-  await genDisplaySocket('niceview-160x68-39mm', niceViewDisplayProps)
   await genPart('switch-joystick-ps2-40x45')
   await genSocket('joystick-ps2-40x45')
 
   const masses: Record<string, number> = {}
   const niceViewDisplayProps: DisplayProps = {
     // 0.2 is added to width and height to account for the 0.2mm tolerance for PCB V-cut
-    pcbLongSideWidth: 36+0.2,
-    pcbShortSideWidth: 14+0.2,
+    pcbLongSideWidth: 36 + 0.2,
+    pcbShortSideWidth: 14 + 0.2,
     offsetFromLongSide: 1.6,
     offsetFromTopShortSide: 4.6,
     offsetFromBottomShortSide: 3.65,
