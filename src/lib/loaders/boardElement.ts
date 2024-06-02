@@ -16,6 +16,7 @@ const MICROCONTROLLER_URLS: Record<Microcontroller, string> = {
   'waveshare-rp2040-zero': '/target/waveshare-rp2040-zero.glb',
   'weact-studio-ch552t': '/target/weact-studio-ch552t.glb',
   'solderless-nn': '/target/solderless-nn.glb',
+  'solderless-nn-v2': '/target/solderless-nn-v2.glb',
 }
 
 const CONNECTOR_URLS: Record<Connector, string> = {

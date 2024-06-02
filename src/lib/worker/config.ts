@@ -89,6 +89,7 @@ export interface SpecificCuttleform<S> {
     | 'waveshare-rp2040-zero'
     | 'weact-studio-ch552t'
     | 'solderless-nn'
+    | 'solderless-nn-v2'
     | null
   fastenMicrocontroller: boolean
   /** Additional height to add to the model. */
@@ -238,6 +239,7 @@ export const MAP_MICROCONTROLLER: Record<MICROCONTROLLER, Cuttleform['microcontr
   [MICROCONTROLLER.RP2040_ZERO]: 'waveshare-rp2040-zero',
   [MICROCONTROLLER.WEACT_CH552T]: 'weact-studio-ch552t',
   [MICROCONTROLLER.SOLDERLESS_NN]: 'solderless-nn',
+  [MICROCONTROLLER.SOLDERLESS_NN_V2]: 'solderless-nn-v2',
 }
 
 export const MAP_CONNECTOR: Record<CONNECTOR, Cuttleform['connector']> = {

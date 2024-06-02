@@ -113,6 +113,10 @@ async function main() {
     { start: 1.1, end: 30, align: { side: 'left', offset: 15.4 }, ...defaults },
     { start: 1.1, end: 30, align: { side: 'right', offset: 16 }, ...defaults },
   ])
+  await genUC('solderless-nn-v2', {}, [
+    { start: 2.7, end: 33, align: { side: 'left', offset: 8.4 }, ...defaults },
+    { start: 2.7, end: 33, align: { side: 'right', offset: 8.4 }, ...defaults },
+  ])
   const dfDisplayProps: DisplayProps = {
     pcbLongSideWidth: 41.08,
     pcbShortSideWidth: 11.5,
@@ -132,9 +136,9 @@ async function main() {
     // 0.2 is added to width and height to account for the 0.2mm tolerance for PCB V-cut
     pcbLongSideWidth: 36 + 0.2,
     pcbShortSideWidth: 14 + 0.2,
-    offsetFromLongSide: 1.6,
-    offsetFromTopShortSide: 4.6,
-    offsetFromBottomShortSide: 3.65,
+    offsetFromLongSide: 0.1,
+    offsetFromTopShortSide: 3.9,
+    offsetFromBottomShortSide: 3,
     displayThickness: 0.9,
     pcbThickness: 2,
   }

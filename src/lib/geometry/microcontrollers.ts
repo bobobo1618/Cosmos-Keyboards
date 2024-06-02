@@ -161,11 +161,26 @@ export const BOARD_PROPERTIES: Record<Microcontroller, BoardProperties> = {
     offset: new Vector(0, 0, 1.835),
     holes: [],
     cutouts: [
-      { size: new Vector(4, 35, 0), origin: new Vector(7.5, -35/2-2, 0) },
-      { size: new Vector(4, 5, 0), origin: new Vector(12, -11-2, 0) },
-      { size: new Vector(4, 35, 0), origin: new Vector(-7.5, -35/2-2, 0) },
-      { size: new Vector(4, 5, 0), origin: new Vector(-12, -11-2, 0) },
-      //{ size: new Vector(4, 30.5, 0), origin: new Vector(46.45 - 14.45, -(1.1 + 64.9/2), 0) },
+      { size: new Vector(4, 35, 0), origin: new Vector(7.5, -35 / 2 - 2, 0) },
+      { size: new Vector(4, 5, 0), origin: new Vector(12, -11 - 2, 0) },
+      { size: new Vector(4, 35, 0), origin: new Vector(-7.5, -35 / 2 - 2, 0) },
+      { size: new Vector(4, 5, 0), origin: new Vector(-12, -11 - 2, 0) },
+      // { size: new Vector(4, 30.5, 0), origin: new Vector(46.45 - 14.45, -(1.1 + 64.9/2), 0) },
+    ],
+    sidecutout: 0,
+  },
+  'solderless-nn-v2': {
+    name: 'Solderless nice!nano v2',
+    size: new Vector(32, 55.5, 1.6),
+    boundingBoxZ: 5,
+    offset: new Vector(0, -3, 1.875),
+    holes: [],
+    cutouts: [
+      { size: new Vector(3, 31, 0), origin: new Vector(15.2 / 2.0, -31 / 2, 0) },
+      { size: new Vector(3, 3, 0), origin: new Vector(15.2 / 2.0 + 3.7, -28.9 - 0.6, 0) },
+      { size: new Vector(3, 31, 0), origin: new Vector(-15.2 / 2.0, -31 / 2, 0) },
+      { size: new Vector(3, 3, 0), origin: new Vector(-15.2 / 2.0 - 3.7, -28.9 - 0.6, 0) },
+      { size: new Vector(3, 14, 0), origin: new Vector(15.2 / 2.0 + 3.4, -(14 / 2), 0) },
     ],
     sidecutout: 0,
   },
@@ -259,10 +274,16 @@ export function boardElements(config: Cuttleform, layout: boolean): BoardElement
       rails: {
         width: RAIL_WIDTH,
         backstop: true,
-        clamps: [
-          { side: 'left', radius: RAIL_RADIUS },
-          { side: 'right', radius: RAIL_RADIUS },
-        ],
+        clamps: config.microcontroller == 'solderless-nn-v2'
+          ? [
+            { side: 'left', radius: RAIL_RADIUS },
+            { side: 'right', radius: RAIL_RADIUS },
+            { side: 'back', radius: RAIL_RADIUS },
+          ]
+          : [
+            { side: 'left', radius: RAIL_RADIUS },
+            { side: 'right', radius: RAIL_RADIUS },
+          ],
       },
     },
     ...offset.connectors,
